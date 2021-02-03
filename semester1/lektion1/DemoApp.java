@@ -5,5 +5,3 @@ public class DemoApp {
         System.out.println("fsdfdsfds");
     }
 }
-
-//GIT TEST
