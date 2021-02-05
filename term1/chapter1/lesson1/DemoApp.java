@@ -1,4 +1,4 @@
-package semester1.lektion1;
+package term1.chapter1.lesson1;
 import java.util.Random;
 
 public class DemoApp {
@@ -6,7 +6,7 @@ public class DemoApp {
         Random rand = new Random();
         int maxNum = 100;
         int randomNum = rand.nextInt(maxNum);
-        if (numberIsBig(randomNum) == true) {
+        if (numberIsBig(randomNum)) {
             System.out.println("Talet er ret stort: " + randomNum);
         } else {
             System.out.println("Talet er ret lille: " + randomNum);
