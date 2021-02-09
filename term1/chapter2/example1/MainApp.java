@@ -10,6 +10,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -39,7 +41,7 @@ public class MainApp extends Application {
         // figurer12(pane);
 
         // OPGAVE 2
-        // opgave2(pane);
+        opgave2(pane);
 
         // OPGAVE 3
         // opgave3(pane);
@@ -51,7 +53,7 @@ public class MainApp extends Application {
         // opgave5(pane);
 
         // FIGURER OPG 4
-        figurer4(pane);
+        // figurer4(pane);
 
     }
 
@@ -161,6 +163,7 @@ public class MainApp extends Application {
 
         Text text = new Text(30, 30, "Emilio");
         text.setFill(Color.RED);
+        text.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
 
         pane.getChildren().addAll(rectangle, text);
     }
