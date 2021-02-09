@@ -1,21 +1,25 @@
 package term1.chapter2.eksempelcar;
 
+import java.util.Random;
+
 public class CarApp {
 
 	public static void main(String[] args) {
-		Car myCar = new Car("VW Up", "White");
-		System.out.println(myCar.getBrand());
-		myCar.setRegistrationNumber("AB 11 123");
-		System.out.println(myCar.getRegistrationNumber());
-		System.out.println(myCar.getKm());
-		
-		System.out.println();
-		
-		Car myCar2 = new Car("Ford S-Max", "Black");
-		System.out.println(myCar2.getBrand());
-		myCar2.setRegistrationNumber("EF 56 789");
-		System.out.println(myCar2.getRegistrationNumber());
-		myCar2.setKm(123000);
-		System.out.println(myCar2.getKm());
+
+		// OPGAVE B + C + D + E
+		Car myCar3 = new Car("Fiat Punto", "Yellow");
+		myCar3.setRegistrationNumber("AB 43 929");
+		myCar3.setKm(new Random().nextInt(999999));
+
+		prettyPrint(myCar3);
+
+	}
+
+	static void prettyPrint(Car car) {
+		System.out.println("* * * * * * * * * * * * *");
+		System.out.println(car.getBrand().toUpperCase() + " " + car.getColor());
+		System.out.println(car.getRegistrationNumber());
+		System.out.println("Antal kilometer: " + car.getKm());
+		System.out.println("* * * * * * * * * * * * *");
 	}
 }
