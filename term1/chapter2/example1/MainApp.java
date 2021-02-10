@@ -1,7 +1,5 @@
 package term1.chapter2.example1;
 
-import java.util.Collection;
-import java.util.List;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -41,7 +39,7 @@ public class MainApp extends Application {
         // figurer12(pane);
 
         // OPGAVE 2
-        opgave2(pane);
+        // opgave2(pane);
 
         // OPGAVE 3
         // opgave3(pane);
