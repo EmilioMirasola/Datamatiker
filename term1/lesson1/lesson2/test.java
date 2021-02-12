@@ -1,4 +1,4 @@
-package term1.chapter1.lesson2;
+package term1.lesson1.lesson2;
 import javax.swing.JOptionPane;
 
 public class test {

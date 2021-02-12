@@ -1,4 +1,4 @@
-package term1.chapter2.example1;
+package term1.lesson2.example_shapes;
 
 import javafx.application.Application;
 

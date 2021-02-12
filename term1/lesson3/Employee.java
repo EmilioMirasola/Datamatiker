@@ -1,4 +1,4 @@
-package term1.chapter3;
+package term1.lesson3;
 
 public class Employee {
     private String name;

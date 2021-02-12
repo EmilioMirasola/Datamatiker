@@ -1,4 +1,4 @@
-package term1.chapter1.lesson1;
+package term1.lesson1.lesson1;
 import java.util.Random;
 
 public class DemoApp {

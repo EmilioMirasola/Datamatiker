@@ -1,4 +1,4 @@
-package term1.chapter2.examplefillstroke;
+package term1.lesson2.examplefillstroke;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

@@ -1,4 +1,4 @@
-package term1.chapter2.eksempelcar;
+package term1.lesson2.eksempelcar;
 
 public class Car {
 	private int km;
