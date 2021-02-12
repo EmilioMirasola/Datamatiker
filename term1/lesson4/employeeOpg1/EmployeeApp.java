@@ -6,5 +6,4 @@ public class EmployeeApp {
 		Employee emilio = new Employee("Emilio", "Mirasola", false, 22);
 		emilio.printEmployee();
 	}
-
 }

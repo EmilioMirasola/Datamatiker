@@ -8,7 +8,9 @@ public class PersonApp {
         List<String> companyList = new ArrayList<String>();
         companyList.add("Google");
         companyList.add("Facebook");
+
         Person emilio = new Person("Emilio Mirasola", "Niels Juels gade 74, ST", 50000, companyList);
+        emilio.addCompany("Tesla");
         emilio.printPerson();
     }
 }
