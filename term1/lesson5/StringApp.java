@@ -5,6 +5,10 @@ public class StringApp {
     public static void main(String[] args) {
 
         String tekst = "Goddag";
+        String two = "Gddag";
+        
+        System.out.println(tekst.equals(two));
+
         int len = tekst.length();
       
         System.out.println("Teksten: " + tekst + " " + "har længde " + len);
@@ -17,9 +21,6 @@ public class StringApp {
         String tekst3 = tekst.toLowerCase();
         System.out.println(tekst3);
         System.out.println("Hello\nWorld");
-        
-        //Hvad kan jeg med Strings ?
-        //tekst.
 
     }
 
