@@ -18,7 +18,7 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
+    
     private GridPane initContent() {
         GridPane pane = new GridPane();
         Canvas canvas = new Canvas(200, 200);
@@ -34,14 +34,14 @@ public class MainApp extends Application {
         // exercise2(gc);
         // exercise3_1(gc);
         // exercise3_2(gc);
-        // exercise3_3(gc);
-        int baseXY = 20;
-        int r = 100;
-        while (r >= 20) {
-            gc.strokeOval(baseXY, baseXY, r, r);
-            r -= 20;
-            baseXY += 20;
-        }
+        exercise3_3(gc);
+        // int baseXY = 20;
+        // int r = 100;
+        // while (r >= 20) {
+        //     gc.strokeOval(baseXY, baseXY, r, r);
+        //     r -= 20;
+        //     baseXY += 20;
+        // }
     }
 
     private void exercise3_3(GraphicsContext gc) {
