@@ -23,7 +23,7 @@ public class Child {
 		for (int i = 1; i < weight.length; i++) {
 			if (weight[i] - weight[i - 1] > weightInfoArray[0]) {
 				weightInfoArray[0] = weight[i] - weight[i - 1];
-				weightInfoArray[1] = i;
+				weightInfoArray[1] = i+1;
 			}
 		}
 		return weightInfoArray;

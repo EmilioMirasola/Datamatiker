@@ -1,5 +1,6 @@
 package term1.lesson12.modelchild;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ChildApp {
@@ -17,15 +18,17 @@ public class ChildApp {
 		// System.out.println("Største vægtforøgelse: " + weightInfo[0] + " I år " +
 		// (int) weightInfo[1]);
 
-		Institution institution = new Institution("Hadbjerg skole", "Hadbjergvej 56");
-		institution.addChild(c1);
-		institution.addChild(c2);
-		institution.addChild(c3);
-		institution.addChild(c4);
+		// Institution institution = new Institution("Hadbjerg skole", "Hadbjergvej
+		// 56");
+		// institution.addChild(c1);
+		// institution.addChild(c2);
+		// institution.addChild(c3);
+		// institution.addChild(c4);
 		// System.out.println(institution.getChilds()[0].getAge());
 		// System.out.println("Gennemsnitsalder: " +institution.averageAge());
-		String gender = "Girl";
-		System.out.println("Antal " + gender + ": " + institution.numberOfGender(gender));
+		// String gender = "Girl";
+		// System.out.println("Antal " + gender + ": " +
+		// institution.numberOfGender(gender));
 	}
 
 }
