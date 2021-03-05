@@ -47,9 +47,10 @@ public class ArrayApp {
         // double doubleArray[] = { 1.5, 2.2, 3.4, 4.7, 5.9 };
         // System.out.println(metode.doubleSum(doubleArray));
 
-        int[] a = { 1, 2, 3, 4, 5 };
-        int[] b = { 6, 7, 8, 9, 10, 11, 12, 13 };
-        System.out.println("Sum af array a og b: " + Arrays.toString(metode.makesum(a, b)));
+        // int[] a = { 1, 2, 3, 4, 5 };
+        // int[] b = { 6, 7, 8, 9, 10, 11, 12, 13 };
+        // System.out.println("Sum af array a og b: " +
+        // Arrays.toString(metode.makesum(a, b)));
 
         // int[] tabel2 = { 78, 23, 1, 4, 65, 3, 87, 5, 12 };
         // metode.printArray(tabel2);
@@ -58,6 +59,18 @@ public class ArrayApp {
 
         // int[] unevenTestArray = { 6, 8, 10 };
         // System.out.println(metode.hasUnevenNum(unevenTestArray));
+
+        int intArray[] = { 2, 4, 1, 3, 5};
+        // metode.swapFirstLast(intArray);
+        // metode.pushElementsRight(intArray);
+        // System.out.println(Arrays.toString(intArray));
+
+        // metode.replaceEvenNumbers(intArray);
+        // System.out.println(Arrays.toString(intArray));
+
+        // System.out.println("Anden største tal: " + metode.secondLargest(intArray));
+        System.out.println("Er stigende: " + metode.isAscending(intArray));
+        System.out.println("Har dupletter: " + metode.containsDuplicates(intArray));
 
     }
 

@@ -1,5 +1,12 @@
 package term1.lesson12.modelarray;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
+import term1.lesson7.booleans;
+
 public class ArrayMethods {
     public void printArray(int[] tabel) {
         System.out.print("{");
@@ -182,4 +189,56 @@ public class ArrayMethods {
         return false;
     }
 
+    public void swapFirstLast(int[] array) {
+        int temp = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = temp;
+    }
+
+    public void pushElementsRight(int[] array) {
+        int last = array[array.length - 1];
+        for (int index = array.length - 2; index >= 0; index--) {
+            array[index + 1] = array[index];
+        }
+        array[0] = last;
+    }
+
+    public void replaceEvenNumbers(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                array[i] = 0;
+            }
+        }
+    }
+
+    public int secondLargest(int[] array) {
+        Arrays.sort(array);
+        return array[array.length - 2];
+    }
+
+    public boolean isAscending(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean containsDuplicates(int[] array) {
+        int[] checkArray = new int[array.length];
+        System.out.println(array.length);
+        int nextIndex = 0;
+        for (int i : array) {
+            System.out.println("index" + nextIndex);
+            for (int j : checkArray) {
+                if (i == j) {
+                    return true;
+                }
+            }
+            checkArray[nextIndex] = i;
+            nextIndex++;
+        }
+        return false;
+    }
 }
