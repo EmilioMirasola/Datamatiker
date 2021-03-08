@@ -10,7 +10,7 @@ public class MethodsArrayListApp {
 		list.add(35);
 		list.add(14);
 		list.add(7);
-		list.add(0);
+		list.add(10);
 		MethodsArrayList methods = new MethodsArrayList();
 		// System.out.println(list);
 		// System.out.println("Summen af tallene i listen med for "
@@ -24,8 +24,9 @@ public class MethodsArrayListApp {
 		// System.out.println("Min: " + methods.min(list));
 		// System.out.println("Ave: " + methods.average(list));
 		// System.out.println("Zeros: " + methods.countZeros(list));
-		// System.out.println("No 0: " + methods.swapEvenWithZero(list));
-		System.out.println("No uneven: " + methods.anEvenList(list));
+		methods.swapEvenWithZero(list);
+		System.out.println("Swapped: " + list);
+		// System.out.println("No uneven: " + methods.anEvenList(list));
 	}
 
 }

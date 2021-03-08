@@ -17,7 +17,7 @@ public class MethodsArrayList {
         return resultat;
     }
 
-    /**
+    /*
      *
      * @param list
      * @return sums the mumbers in the list using a forEach loop
@@ -58,13 +58,19 @@ public class MethodsArrayList {
         return zeros;
     }
 
-    public ArrayList<Integer> swapEvenWithZero(ArrayList<Integer> list) {
+    public void swapEvenWithZero(ArrayList<Integer> list) {
+
+        // for (Integer num : list) {
+        //     if (list.get(num) % 2 == 0) {
+        //         list.set(num, 0);
+        //     }
+        // }
+
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) % 2 == 0) {
                 list.set(i, 0);
             }
         }
-        return list;
     }
 
     public ArrayList<Integer> anEvenList(ArrayList<Integer> list) {
