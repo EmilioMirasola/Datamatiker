@@ -64,7 +64,7 @@ public class StudentApp extends Application {
 		Label lblActive = new Label("Aktiv");
 		pane.add(lblActive, 0, 3);
 
-		pane.add(txAge, 1, 2);
+		pane.add(txAge, 1, 2, 1, 2);
 		pane.add(btnBirthday, 2, 2, 1, 1);
 		btnBirthday.setOnAction(event -> studerende.increaseAge());
 		pane.add(txfName, 1, 1, 4, 1);
