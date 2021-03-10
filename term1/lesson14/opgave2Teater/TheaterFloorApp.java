@@ -8,20 +8,29 @@ public class TheaterFloorApp {
 
 	public static void main(String[] args) {
 		TheaterFloor theater = new TheaterFloor();
+		boolean finished = false;
 
-		System.out.println("Hvordan vil du købe en billet? (pris, plads)");
-		Scanner in = new Scanner(System.in);
-		String buyType = in.nextLine();
-		if (buyType.equalsIgnoreCase("pris")) {
-			pricePurchase(theater, in);
-		} else if (buyType.equalsIgnoreCase("plads")) {
-			seatingPurchase(theater, in);
-		}
-		in.close();
-		theater.printTheaterFloor();
+		// while (!finished) {
+			System.out.println("Hvordan vil du købe en billet? (pris, plads)");
+			Scanner in = new Scanner(System.in);
+			String buyType = in.nextLine();
+			if (buyType.equalsIgnoreCase("pris")) {
+				pricePurchase(theater, in);
+			} else if (buyType.equalsIgnoreCase("plads")) {
+				seatingPurchase(theater, in);
+			}
+			// System.out.println("Vil du købe flere pladser? (Ja/nej)");
+			// String response = in.nextLine();
+			// if (response.equalsIgnoreCase("nej")) {
+			// 	finished = true;
+				in.close();
+				theater.printTheaterFloor();
+			// }
+		// }
 	}
 
 	private static void seatingPurchase(TheaterFloor theater, Scanner in) {
+		theater.printTheaterFloor();
 		System.out.println(ConsoleColors.YELLOW + "Angiv række" + ConsoleColors.RESET);
 		int row = in.nextInt();
 		System.out.println(ConsoleColors.YELLOW + "Angiv sæde" + ConsoleColors.RESET);
@@ -40,6 +49,7 @@ public class TheaterFloorApp {
 	}
 
 	private static void pricePurchase(TheaterFloor theater, Scanner in) {
+		theater.printTheaterFloor();
 		System.out.println(ConsoleColors.YELLOW + "Til hvilken pris?" + ConsoleColors.RESET);
 		int price = in.nextInt();
 
