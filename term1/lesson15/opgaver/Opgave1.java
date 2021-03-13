@@ -68,7 +68,6 @@ public class Opgave1 extends Application {
 
 	private void calculateFahrenheit() {
 		double celcius = Double.parseDouble(txf1.getText());
-		// double fahrenheit = celcius * 9 / 5 + 32;
 		double fahrenheit = celcius * 9 / 5 + 32;
 		txf2.setText(fahrenheit + "");
 	}

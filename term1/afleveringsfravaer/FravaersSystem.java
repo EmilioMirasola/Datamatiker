@@ -47,10 +47,14 @@ public class FravaersSystem {
 	 */
 	public int samletFravaer(int[][] fravaer, int elevNr) {
 		int fraværSum = 0;
-		for (int i = 0; i < fravaer[elevNr].length; i++) {
-			fraværSum += fravaer[elevNr][i];
+		if (!indexOutOfBounds(elevNr, fravaer)) {
+			for (int i = 0; i < fravaer[elevNr].length; i++) {
+				fraværSum += fravaer[elevNr][i];
+			}
+			return fraværSum;
+		} else {
+			return -1;
 		}
-		return fraværSum;
 	}
 
 	/**
@@ -62,7 +66,11 @@ public class FravaersSystem {
 	 * @return
 	 */
 	public double gennemsnit(int[][] fravaer, int elevNr) {
-		return (double) samletFravaer(fravaer, elevNr) / 12;
+		if (!indexOutOfBounds(elevNr, fravaer)) {
+			return (double) samletFravaer(fravaer, elevNr) / 12;
+		} else {
+			return -1;
+		}
 	}
 
 	/**
@@ -93,8 +101,9 @@ public class FravaersSystem {
 		int elevNr = samletFravaer(fravaer, 0);
 		int maxFravær = 0;
 		for (int i = 1; i < fravaer.length; i++) {
-			if (samletFravaer(fravaer, i) > maxFravær) {
-				maxFravær = samletFravaer(fravaer, i);
+			int elevFravær = samletFravaer(fravaer, i);
+			if (elevFravær > maxFravær) {
+				maxFravær = elevFravær;
 				elevNr = i;
 			}
 		}
@@ -109,8 +118,21 @@ public class FravaersSystem {
 	 * @param elevNr
 	 */
 	public void nulstil(int[][] fravaer, int elevNr) {
-		for (int i = 0; i < fravaer[elevNr].length; i++) {
-			fravaer[elevNr][i] = 0;
+		if (!indexOutOfBounds(elevNr, fravaer)) {
+			for (int i = 0; i < fravaer[elevNr].length; i++) {
+				fravaer[elevNr][i] = 0;
+			}
+		} else {
+			System.out.println("Studerende nr. " + elevNr + " findes ikke i arrayet");
+			System.out.println("Fravær ikke opdateret");
+		}
+	}
+
+	private boolean indexOutOfBounds(int index, int[][] array) {
+		if (index >= array.length) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 }
