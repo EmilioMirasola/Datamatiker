@@ -7,11 +7,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import term1.lesson16.Person;
@@ -24,7 +21,7 @@ public class PersonOprettelse extends Application {
 		GridPane pane = new GridPane();
 		this.initContent(pane);
 
-		this.personInputWindow = new PersonInputWindow();
+		this.personInputWindow = new PersonInputWindow("Create person", stage);
 		Scene scene = new Scene(pane);
 		stage.setScene(scene);
 		stage.show();
@@ -32,7 +29,6 @@ public class PersonOprettelse extends Application {
 
 	private ArrayList<Person> persons;
 	private ListView<Person> lvwPersons;
-	private Alert alert;
 	private PersonInputWindow personInputWindow;
 
 	private void initContent(GridPane pane) {
@@ -45,31 +41,25 @@ public class PersonOprettelse extends Application {
 
 		Button btnAdd = new Button("Add person");
 		btnAdd.setOnAction(event -> addPerson());
-		pane.add(btnAdd, 2, 2);
+		pane.add(btnAdd, 2, 0);
 
 
 		Label personLbl = new Label("Persons:");
-		pane.add(personLbl, 0, 3);
+		pane.add(personLbl, 0, 0);
 
 		lvwPersons = new ListView<Person>();
 		lvwPersons.getItems().setAll(this.persons);
-		pane.add(lvwPersons, 1, 3, 1, 3);
+		pane.add(lvwPersons, 1, 0, 1, 2);
 
 	}
 
 	private void addPerson() {
 
 		personInputWindow.showAndWait();
-		// if (name.length() < 1 || title.length() < 1) {
-		// 	this.alert = new Alert(AlertType.ERROR);
-		// 	alert.setTitle("Add person");
-		// 	alert.setHeaderText("No name typed");
-		// 	alert.setContentText("Type the name of the person");
-		// 	alert.show();
-		// } else {
-		// 	this.persons.add(new Person(name, title, senior));
-		// 	this.lvwPersons.getItems().setAll(persons);
-		// }
+		if(personInputWindow.getActualPerson() != null) {
+			this.persons.add(personInputWindow.getActualPerson());
+			lvwPersons.getItems().setAll(persons);
+		}
 	}
 
 	private void initPersons() {
