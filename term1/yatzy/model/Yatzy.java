@@ -54,7 +54,7 @@ public class Yatzy {
 	 */
 	public void throwDice(boolean[] holds) {
 		throwCount++;
-		for (int i = 0; i < holds.length; i++) {
+		for (int i = 0; i < this.values.length; i++) {
 			if (holds[i] == false) {
 				this.values[i] = random.nextInt(6) + 1;
 			}
