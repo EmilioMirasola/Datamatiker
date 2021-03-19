@@ -3,6 +3,7 @@ package term1.yatzy.gui;
 import java.util.Arrays;
 
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -108,6 +109,7 @@ public class MainApp extends Application {
 			for (int i = 0; i < newValues.length; i++) {
 				this.txfValues[i].setText(Integer.toString(newValues[i]));
 			}
+			this.calcScoring();
 		}
 	}
 
@@ -126,12 +128,39 @@ public class MainApp extends Application {
 		for (int i = 0; i < txfResults.length; i++) {
 			this.txfResults[i] = new TextField("0");
 			this.txfResults[i].setPrefWidth(w);
-			this.txfResults[i].setOnMouseClicked(event -> System.out.println("test"));
+			this.txfResults[i].setOnMouseClicked(event -> determineEventFunction(event));
 			scorePane.add(this.txfResults[i], 1, i);
 
 			Label lbl = new Label(determineLabel(i));
 			scorePane.add(lbl, 0, i);
 		}
+	}
+
+	private void calcScoring() {
+		for (int i = 0; i < this.txfResults.length; i++) {
+			this.determineScoringAlgorithm(i);
+		}
+	}
+
+	private void determineScoringAlgorithm(int i) {
+		if (i >= 0 && i <= 6) {
+			if (!checkIfFieldDisabled(i)) {
+				this.txfResults[i].setText(Integer.toString(logicYatzy.sameValuePoints(i + 1)));
+			}
+		} else if (i == 7) {
+			if (!checkIfFieldDisabled(i)) {
+				this.txfResults[i - 1].setText(Integer.toString(logicYatzy.onePairPoints()));
+			}
+		}
+	}
+
+	private boolean checkIfFieldDisabled(int i) {
+		return this.txfResults[i].isDisabled();
+	}
+
+	private void determineEventFunction(Event event) {
+		TextField txt = (TextField) event.getSource();
+		txt.setDisable(true);
 	}
 
 	private String determineLabel(int i) {
