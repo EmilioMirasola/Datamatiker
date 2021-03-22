@@ -222,8 +222,8 @@ public class Yatzy {
 	public int smallStraightPoints() {
 		int[] faceValueCount = this.calcCounts();
 
-		for (int i = 1; i < faceValueCount.length-1; i++) {
-			if(faceValueCount[i] != 1) {
+		for (int i = 1; i < faceValueCount.length - 1; i++) {
+			if (faceValueCount[i] != 1) {
 				return 0;
 			}
 		}
@@ -238,7 +238,7 @@ public class Yatzy {
 		int[] faceValueCount = this.calcCounts();
 
 		for (int i = 2; i < faceValueCount.length; i++) {
-			if(faceValueCount[i] != 1) {
+			if (faceValueCount[i] != 1) {
 				return 0;
 			}
 		}
@@ -263,11 +263,17 @@ public class Yatzy {
 	public int yatzyPoints() {
 		int target = this.values[0];
 		for (int value : this.values) {
-			if (value != target) {
+			if (value != target || value == 0) {
 				return 0;
 			}
 		}
 		return 50;
+	}
+
+	public void resetFaceValues() {
+		for (int i = 0; i < this.values.length; i++) {
+			values[i] = 0;
+		}
 	}
 
 }
