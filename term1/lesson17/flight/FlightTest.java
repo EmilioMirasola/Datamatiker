@@ -20,5 +20,4 @@ public class FlightTest {
         System.out.println("Flight time in hours: " + flight.flightDurationInHours());
         System.out.println("Is during midnight?: " + flight.midnightFlight());
     }
-
 }

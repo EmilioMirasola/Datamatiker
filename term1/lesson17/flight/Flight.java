@@ -151,7 +151,7 @@ public class Flight {
             if (this.departDate.getDayOfWeek() != this.arrivalDate.getDayOfWeek()) {
                 return true;
             } else {
-                return false; // and don't just return false :)
+                return false;
             }
         } else {
             System.out.println("Missing departure or landing date!");
