@@ -38,14 +38,16 @@ public class Series {
     public ArrayList<String> getGuestActors() {
         ArrayList<String> allGuestActors = new ArrayList<String>();
 
-        for (Episode episode : this.episodes) {
+        this.episodes.forEach((Episode episode) -> {
             allGuestActors.addAll(episode.getGuestActors());
+        });
 
-            // Gør det samme..
-            // for (String actor : episode.getGuestActors()) {
-            // allActors.add(actor);
-            // }
-        }
+        //Gør det samme
+        // for (Episode episode : this.episodes) {
+        //     for (String actor : episode.getGuestActors()) {
+        //         allGuestActors.add(actor);
+        //     }
+        // }
         return allGuestActors;
     }
 }

@@ -10,13 +10,12 @@ public class Swimmer {
     private String club;
     private int yearGroup;
     private ArrayList<Double> lapTimes;
-    private TrainingPlan trainingPlan;
 
     /**
      * Initialize a new swimmer with name, club, yearGroup, and lap times.
      */
 
-    public Swimmer(String name, int yearGroup, ArrayList<Double> lapTimes, String club) {
+    Swimmer(String name, int yearGroup, ArrayList<Double> lapTimes, String club) {
         this.name = name;
         this.yearGroup = yearGroup;
         this.lapTimes = lapTimes;

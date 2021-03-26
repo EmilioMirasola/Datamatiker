@@ -10,7 +10,6 @@ public class Swimmer {
     private String club;
     private int yearGroup;
     private ArrayList<Double> lapTimes;
-    private TrainingPlan trainingPlan;
 
     /**
      * Initialize a new swimmer with name, club, yearGroup, and lap times.

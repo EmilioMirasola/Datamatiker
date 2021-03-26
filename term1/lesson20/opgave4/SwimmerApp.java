@@ -38,9 +38,11 @@ public class SwimmerApp {
         lapTimes.add(1.06);
         lapTimes.add(1.03);
         t2.createSwimmer("Mikkel", 1993, lapTimes, "AIA-Tranbjerg");
-        System.out.println(t1.getSwimmers());
+
+        
+        System.out.println(t1.getSwimmers().toString());
         t1.removeSwimmer(t1.getSwimmers().get(0));
-        System.out.println(t1.getSwimmers());
+        System.out.println(t1.getSwimmers().toString());
     }
 
 }
