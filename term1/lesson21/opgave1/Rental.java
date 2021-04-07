@@ -24,11 +24,7 @@ public class Rental {
     }
 
     public double getPrice() {
-        int sum = 0;
-        for (Car car : this.cars) {
-            sum += car.getPricePerDay();
-        }
-        return sum * this.days;
+        return cars.stream().mapToDouble(Car::getPricePerDay).sum() * days;
     }
 
     public int getDays() {

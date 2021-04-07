@@ -1,12 +1,13 @@
 package term1.lesson21.opgave1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Car {
-    private String license;
+    private final String license;
     private double pricePerDay;
-    private int purchaseYear;
-    private ArrayList<Rental> rentals = new ArrayList<Rental>();
+    private final int purchaseYear;
+    private final List<Rental> rentals = new ArrayList<>();
 
     public Car(String license, int purchaseYear) {
         this.license = license;
@@ -42,6 +43,6 @@ public class Car {
             }
         }
         return longest;
-    }
 
+    }
 }
