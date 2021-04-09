@@ -9,13 +9,17 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import term1.lesson22.application.controller.Controller;
+import term1.lesson22.application.model.Company;
 
 public class CreateCustomerWindow extends Stage {
     private TextField txfName;
-    public CreateCustomerWindow(String title) {
+    private final Company company;
+
+    public CreateCustomerWindow(String title, Company company) {
         this.initStyle(StageStyle.UTILITY);
         this.initModality(Modality.APPLICATION_MODAL);
         this.setResizable(false);
+        this.company = company;
 
         this.setTitle(title);
         GridPane pane = new GridPane();
@@ -39,7 +43,7 @@ public class CreateCustomerWindow extends Stage {
         pane.add(btnCancel, 0,1);
 
         btnOk.setOnAction(event -> {
-            Controller.createCustomer(txfName.getText());
+            Controller.createCustomer(txfName.getText(), company);
             this.close();
         });
 

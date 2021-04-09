@@ -63,6 +63,11 @@ public class CompanyPane extends GridPane {
 		GridPane.setValignment(lblEmps, VPos.BASELINE);
 		lblEmps.setPadding(new Insets(4, 0, 4, 0));
 
+		Label lblCustomers = new Label("Customers:");
+		this.add(lblCustomers, 1, 4);
+		GridPane.setValignment(lblEmps, VPos.BASELINE);
+		lblCustomers.setPadding(new Insets(4, 0, 4, 0));
+
 		txaEmps = new TextArea();
 		this.add(txaEmps, 2, 3);
 		txaEmps.setPrefWidth(200);
@@ -113,8 +118,11 @@ public class CompanyPane extends GridPane {
 	}
 
 	private void createCustomerAction() {
-		CreateCustomerWindow window = new CreateCustomerWindow("Create customer");
+		Company company = lvwCompanies.getSelectionModel().getSelectedItem();
+		CreateCustomerWindow window = new CreateCustomerWindow("Create customer", company);
 		window.showAndWait();
+
+		this.updateControls();
 	}
 
 	// -------------------------------------------------------------------------

@@ -111,6 +111,13 @@ public class Controller {
         return customer;
     }
 
+    public static Customer createCustomer(String name, Company company) {
+        Customer customer = new Customer(name);
+        addCostumerToCompany(customer, company);
+        Storage.addCustomer(customer);
+        return customer;
+    }
+
     public static void addCostumerToCompany(Customer customer, Company company){
         company.addCustomer(customer);
     }
