@@ -1,7 +1,6 @@
 package term1.lesson31;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,8 +19,18 @@ public class SortMethods {
         }
     }
 
-    public static void insertionSort(String[] array) {
-        // TODO
+//    public static void insertionSort(String[] array) {
+//        // TODO
+//    }
+
+    public static void insertionSort(ArrayList<String> array) {
+        for (int outerIndex = 0; outerIndex < array.size(); outerIndex++) {
+            for (int innerIndex = 0; innerIndex <= outerIndex; innerIndex++) {
+                if (array.get(innerIndex).compareTo(array.get(outerIndex)) > 0) {
+                    Collections.swap(array, outerIndex, innerIndex);
+                }
+            }
+        }
     }
 
     public static void selectionSort(String[] array) {

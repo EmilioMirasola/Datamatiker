@@ -1,9 +1,7 @@
 package term1.lesson31;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
 
 public class SortTester {
 
@@ -14,16 +12,32 @@ public class SortTester {
         String[] bigArray1 = bigList.toArray(new String[0]);
         String[] bigArray2 = bigList.toArray(new String[0]);
         String[] bigArray3 = bigList.toArray(new String[0]);
-        List<Customer> customerList = new ArrayList<>();
+        ArrayList<Customer> customerList = new ArrayList<>();
         customerList.add(new Customer(22, "Emilio", "ååå"));
         customerList.add(new Customer(19, "Erminia", "kkk"));
         customerList.add(new Customer(18, "Filippa", "ddd"));
         customerList.add(new Customer(50, "Riccardo", "ccc"));
         customerList.add(new Customer(59, "Lisa", "aaa"));
 
+        ArrayList<String> stringList = new ArrayList<>();
+        stringList.add("a");
+        stringList.add("d");
+        stringList.add("b");
+        stringList.add("a");
+        stringList.add("c");
+        stringList.add("d");
+        stringList.add("c");
+        stringList.add("c");
+        stringList.add("b");
+        stringList.add("b");
+        stringList.add("c");
+        stringList.add("a");
+        stringList.add("b");
+        stringList.add("b");
+
         // Bubble Sort Test
         Measurer.start();
-        //SortMethods.bubbleSort(bigArray1);
+        SortMethods.bubbleSort(bigArray1);
         Measurer.stop();
         System.out.println(String.format("BubbleSort (%d) -- Total time in milliseconds: %d",
                 testSize, Measurer.durationMilliSeconds()));
@@ -31,14 +45,15 @@ public class SortTester {
 
         // Insertion Sort Test
         Measurer.start();
-        SortMethods.insertionSort(bigArray2);
+        SortMethods.insertionSort(stringList);
         Measurer.stop();
         System.out.println(String.format("InsertionSort (%d) -- Total time in milliseconds: %d",
                 testSize, Measurer.durationMilliSeconds()));
+//        System.out.println(stringList);
 
         // Selection Sort Test 1
         Measurer.start();
-        //SortMethods.selectionSort(bigArray3);
+        SortMethods.selectionSort(bigArray3);
         Measurer.stop();
         System.out.println(String.format("SelectionSort (%d) -- Total time in milliseconds: %d",
                 testSize, Measurer.durationMilliSeconds()));
@@ -46,11 +61,17 @@ public class SortTester {
         // Selection Sort Test 2
         //System.out.println(customerList);
         Measurer.start();
-        //SortMethods.selectionSort(customerList);
+        SortMethods.selectionSort(customerList);
         Measurer.stop();
         //System.out.println(String.format("SelectionSort (%d) -- Total time in milliseconds: %d",
         //        testSize, Measurer.durationMilliSeconds()));
         //System.out.println(customerList);
+
+        Measurer.start();
+        Collections.sort(customerList);
+        Measurer.stop();
+        System.out.println(String.format("Collections.sort() (%d) -- Total time in milliseconds: %d",
+                testSize, Measurer.durationMilliSeconds()));
     }
 
 }
