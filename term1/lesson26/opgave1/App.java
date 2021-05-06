@@ -36,7 +36,10 @@ public class App {
     }
 
     public static double avg(Measurable[] objects) {
-        return Arrays.stream(objects).mapToDouble(Measurable::getMeasure).sum() / objects.length;
+        return Arrays.stream(objects)
+                .mapToDouble(Measurable::getMeasure)
+                .average()
+                .orElseThrow();
     }
 
     public static double avg(Measurable[] objects, Filter filter) {
@@ -46,5 +49,4 @@ public class App {
                 .average()
                 .orElseThrow();
     }
-
 }

@@ -7,37 +7,29 @@ import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) {
-        Customer[] customerList = new Customer[5];
+        Customer[] customerList = new Customer[6];
         customerList[0] = new Customer("Emilio", "Mirasola", 22);
         customerList[1] = new Customer("Erminia", "Laura", 19);
         customerList[2] = new Customer("Filippa", "Bjerring", 17);
-        customerList[3] = new Customer("Lisa", "Pedersen", 49);
-        customerList[4] = new Customer("Riccardo", "Nissemand", 50);
+        customerList[3] = new Customer("Filippa", "Bjerring", 18);
+        customerList[4] = new Customer("Lisa", "Pedersen", 49);
+        customerList[5] = new Customer("Riccardo", "Nissemand", 50);
 
         System.out.println("Sidste costumer: " + lastCostumer(customerList).getEfternavn());
-        Customer chosen = customerList[4];
-        System.out.println("Kunder efter " + chosen.getEfternavn() +" : " + afterCostumer(customerList, chosen));
+        Customer chosen = customerList[2];
+        System.out.println("Kunder efter " + chosen.getEfternavn() + " : " + afterCostumer(customerList, chosen));
     }
 
     public static List<Customer> afterCostumer(Customer[] customerList, Customer customer) {
-        //List<Customer> newList = new ArrayList<>();
-        //for (Customer c: customerList) {
-        //    if(c.compareTo(customer) > 0) {
-        //        newList.add(c);
-        //    }
-        //}
-        //return newList;
-
         return Arrays.stream(customerList)
                 .filter(c -> c.compareTo(customer) > 0)
                 .collect(Collectors.toList());
-
     }
 
     public static Customer lastCostumer(Customer[] costumers) {
         Customer lastCostumer = costumers[0];
         for (Customer costumer : costumers) {
-            if (costumer.compareTo(lastCostumer) < 0) {
+            if (costumer.compareTo(lastCostumer) > 0) {
                 lastCostumer = costumer;
             }
         }

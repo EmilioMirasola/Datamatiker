@@ -2,8 +2,8 @@ package term1.lesson26.opgave2;
 
 public class Customer implements Comparable<Customer> {
     private String navn;
-    private String efternavn;
-    private int alder;
+    private final String efternavn;
+    private final int alder;
 
     public Customer(String navn, String efternavn, int alder) {
         this.navn = navn;
@@ -15,17 +15,11 @@ public class Customer implements Comparable<Customer> {
         return alder;
     }
 
-    public void setAlder(int alder) {
-        this.alder = alder;
-    }
 
     public String getEfternavn() {
         return efternavn;
     }
 
-    public void setEfternavn(String efternavn) {
-        this.efternavn = efternavn;
-    }
 
     public String getNavn() {
         return navn;
@@ -37,11 +31,22 @@ public class Customer implements Comparable<Customer> {
 
     @Override
     public int compareTo(Customer customer) {
-        return this.getEfternavn().compareTo(customer.getEfternavn());
+        int sammenligning = this.getEfternavn().compareTo(customer.getEfternavn());
+        if (sammenligning == 0) {
+            sammenligning = this.getNavn().compareTo(customer.getNavn());
+            if (sammenligning == 0) {
+                sammenligning = this.getAlder() - customer.getAlder();
+            }
+        }
+        return sammenligning;
     }
 
     @Override
     public String toString() {
         return this.getEfternavn();
     }
+
+
 }
+
+
