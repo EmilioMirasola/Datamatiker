@@ -1,64 +1,84 @@
 package term1.lesson31;
 
+import term1.lesson31.Customer;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+
 
 public class SortMethods {
 
-    public static void bubbleSort(String[] array) {
+    private static void swap(Comparable[] data, int index1, int index2) {
+        Comparable temp = data[index1];
+        data[index1] = data[index2];
+        data[index2] = temp;
+    }
 
-        for (int i = array.length - 1; i >= 0; i--) {
-            for (int j = 0; j <= i - 1; j++) {
-                if (array[j].compareTo(array[j + 1]) > 0) {
-                    String temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
+    public static void bubbleSort(String[] array) {
+        {
+            int position, scan;
+            for (position = array.length - 1; position >= 0; position--) {
+                for (scan = 0; scan <= position - 1; scan++)
+                    if (array[scan].compareTo(array[scan + 1]) > 0) {
+                        swap(array, scan, scan + 1);
+                    }
             }
         }
     }
 
-//    public static void insertionSort(String[] array) {
-//        // TODO
-//    }
-
-    public static void insertionSort(ArrayList<String> array) {
-        for (int outerIndex = 0; outerIndex < array.size(); outerIndex++) {
-            for (int innerIndex = 0; innerIndex <= outerIndex; innerIndex++) {
-                if (array.get(innerIndex).compareTo(array.get(outerIndex)) > 0) {
-                    Collections.swap(array, outerIndex, innerIndex);
+    public static void insertionSort(String[] array) {
+        {
+            for (int index = 1; index < array.length; index++) {
+                String key = array[index];
+                int position = index; //  Shift larger values to the right while
+                while (position > 0 && array[position - 1].compareTo(key) > 0) {
+                    array[position] = array[position - 1];
+                    position--;
                 }
+                array[position] = key;
+            }
+        }
+    }
+
+    public static void insertionSortCustomers(ArrayList<Customer> customers) {
+        {
+            for (int index = 1; index < customers.size(); index++) {
+                Customer key = customers.get(index);
+                int position = index; //  Shift larger values to the right while
+                while (position > 0 && (customers.get(position - 1).compareTo(key) > 0)) {
+
+                    Collections.swap(customers, customers.indexOf(customers.get(position)), customers.indexOf(customers.get(position - 1)));
+                    position--;
+                }
+                //key = customers.get(position);
             }
         }
     }
 
     public static void selectionSort(String[] array) {
-        int min = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-            min = i;
-            for (int j = i + 1; j < array.length - 1; j++) {
-                if (array[j].compareTo(array[min]) < 0) {
-                    min = j;
-                    String temp = array[min];
-                    array[min] = array[i];
-                    array[i] = temp;
+        int min;
+        for (int index = 0; index < array.length - 1; index++) {
+            min = index;
+            for (int scan = index + 1; scan < array.length; scan++) {
+                if (array[scan].compareTo(array[min]) < 0) {
+                    min = scan;
                 }
+
             }
+            swap(array, min, index);
 
         }
     }
 
-    public static void selectionSort(List<Customer> array) {
+    public static void selectionSortCustomers(ArrayList<Customer> customers) {
         int min;
-        for (int i = 0; i < array.size() - 1; i++) {
-            min = i;
-            for (int j = i + 1; j < array.size(); j++) {
-                if (array.get(j).compareTo(array.get(min)) < 0) {
-                    min = j;
+        for (int index = 0; index < customers.size() - 1; index++) {
+            min = index;
+            for (int scan = index + 1; scan < customers.size(); scan++) {
+                if (customers.get(scan).compareTo(customers.get(min)) < 0) {
+                    min = scan;
                 }
-                Collections.swap(array, j, min);
             }
+            Collections.swap(customers, min, index);
 
         }
     }

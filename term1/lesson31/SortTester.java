@@ -1,6 +1,7 @@
 package term1.lesson31;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class SortTester {
@@ -37,7 +38,7 @@ public class SortTester {
 
         // Bubble Sort Test
         Measurer.start();
-        SortMethods.bubbleSort(bigArray1);
+        SortMethodsMin.bubbleSort(bigArray1);
         Measurer.stop();
         System.out.println(String.format("BubbleSort (%d) -- Total time in milliseconds: %d",
                 testSize, Measurer.durationMilliSeconds()));
@@ -45,15 +46,25 @@ public class SortTester {
 
         // Insertion Sort Test
         Measurer.start();
-        SortMethods.insertionSort(stringList);
+        //SortMethodsMin.insertionSort(new ArrayList<>(Arrays.asList(bigArray1)));
+        //SortMethodsMin.insertionSortList(stringList);
         Measurer.stop();
         System.out.println(String.format("InsertionSort (%d) -- Total time in milliseconds: %d",
                 testSize, Measurer.durationMilliSeconds()));
-//        System.out.println(stringList);
+        System.out.println(stringList);
+
+        // Insertion Sort Test 2
+        Measurer.start();
+        //SortMethodsMin.insertionSort(new ArrayList<>(Arrays.asList(bigArray1)));
+        SortMethodsMin.insertionSort(bigArray2);
+        Measurer.stop();
+        System.out.println(String.format("InsertionSort (%d) -- Total time in milliseconds: %d",
+                testSize, Measurer.durationMilliSeconds()));
+        //System.out.println(Arrays.toString(bigArray2));
 
         // Selection Sort Test 1
         Measurer.start();
-        SortMethods.selectionSort(bigArray3);
+        SortMethodsMin.selectionSort(bigArray3);
         Measurer.stop();
         System.out.println(String.format("SelectionSort (%d) -- Total time in milliseconds: %d",
                 testSize, Measurer.durationMilliSeconds()));
@@ -61,7 +72,7 @@ public class SortTester {
         // Selection Sort Test 2
         //System.out.println(customerList);
         Measurer.start();
-        SortMethods.selectionSort(customerList);
+        SortMethodsMin.selectionSort(customerList);
         Measurer.stop();
         //System.out.println(String.format("SelectionSort (%d) -- Total time in milliseconds: %d",
         //        testSize, Measurer.durationMilliSeconds()));
