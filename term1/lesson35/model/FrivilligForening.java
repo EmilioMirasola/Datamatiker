@@ -1,0 +1,25 @@
+package term1.lesson35.model;
+
+public class FrivilligForening extends Frivillig {
+    private String foreningsNavn;
+    private int antalPersoner;
+
+    public FrivilligForening(String navn, String mobil, int maskAntalTimer, String foreningsNavn, int antalPersoner) {
+        super(navn, mobil, maskAntalTimer);
+        this.foreningsNavn = foreningsNavn;
+        this.antalPersoner = antalPersoner;
+    }
+
+    public String getForeningsNavn() {
+        return foreningsNavn;
+    }
+
+    public int getAntalPersoner() {
+        return antalPersoner;
+    }
+
+    @Override
+    public String toString() {
+        return this.getNavn() + " " + this.getAntalPersoner() + " " + this.getForeningsNavn();
+    }
+}

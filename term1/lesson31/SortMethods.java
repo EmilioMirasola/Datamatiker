@@ -49,7 +49,6 @@ public class SortMethods {
                     Collections.swap(customers, customers.indexOf(customers.get(position)), customers.indexOf(customers.get(position - 1)));
                     position--;
                 }
-                //key = customers.get(position);
             }
         }
     }
