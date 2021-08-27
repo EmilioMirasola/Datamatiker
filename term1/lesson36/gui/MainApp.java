@@ -13,13 +13,15 @@ import term1.lesson36.model.Bilmærke;
 import term1.lesson36.model.Parkeringshus;
 import term1.lesson36.model.Parkeringsplads;
 
+import java.util.Arrays;
+
 
 public class MainApp extends Application {
-    HBox hBoxContainer = new HBox();
-    ParkeringshuseListView parkeringshuseListView;
-    OptagnePladserListView optagnePladserListView;
-    ComboBox<Bilmærke> cbbBilmærke;
-    ComboBox<Parkeringsplads> cbBoxParkeringsPladser;
+    private HBox hBoxContainer = new HBox();
+    private ParkeringshuseListView parkeringshuseListView;
+    private OptagnePladserListView optagnePladserListView;
+    private ComboBox<Bilmærke> cbbBilmærke;
+    private ComboBox<Parkeringsplads> cbBoxParkeringsPladser;
     private TextField txtBil;
 
     @Override
@@ -42,6 +44,7 @@ public class MainApp extends Application {
 
     private void tilføjBilInput() {
         VBox box = new VBox();
+        box.setSpacing(10);
 
         Label label = new Label("Opret bil med nummer: ");
         box.getChildren().add(label);
@@ -67,8 +70,22 @@ public class MainApp extends Application {
         box.getChildren().add(btnOpret);
         btnOpret.setOnAction(event -> opretBil());
 
+        Label lblSaldoOverskrift = new Label("Saldo");
+        box.getChildren().add(lblSaldoOverskrift);
+
+        Button btnHentBil = new Button("Hent bil");
+        btnHentBil.setOnAction(event -> hentBil());
+        box.getChildren().add(btnHentBil);
+
+        Label lblSaldo = new Label(String.valueOf(Controller.getPHusSaldo(parkeringshuseListView.getSelectionModel().getSelectedItem())));
+        box.getChildren().add(lblSaldo);
         hBoxContainer.getChildren().add(box);
 
+
+    }
+
+    private void hentBil() {
+        System.out.println("Og så nåede jeg ikke mere :)");
     }
 
     private void opretBil() {

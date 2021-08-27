@@ -67,6 +67,19 @@ public class Parkeringshus {
         return -1;
     }
 
+    public Parkeringsplads findPladsmedBil(String bilRegNr) {
+        int i = 0;
+        while (i < parkeringspladser.size()) {
+            Parkeringsplads pPlads = parkeringspladser.get(i);
+            if (pPlads.getBil() != null && pPlads.getParkeretBilRegNr().equals(bilRegNr)) {
+                return pPlads;
+            } else {
+                i++;
+            }
+        }
+        return null;
+    }
+
     public int findAntalBiler(Bilmærke mærke) {
         return (int) parkeringspladser
                 .stream()

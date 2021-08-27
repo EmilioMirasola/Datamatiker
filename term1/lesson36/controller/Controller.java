@@ -97,4 +97,7 @@ public class Controller {
 
     }
 
+    public static double getPHusSaldo(Parkeringshus pHus) {
+        return pHus.getSaldo();
+    }
 }
