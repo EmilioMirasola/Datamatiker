@@ -7,8 +7,8 @@ public class Main {
 //        System.out.println(power2(2, 2));
 //        System.out.println(productRus(19, 3));
 //        System.out.println(product(19, 3));
-        System.out.println(reverse("hej"));
-//        System.out.println(euclid(54, 24));
+//        System.out.println(reverse("hej"));
+        System.out.println(euclid(54, 24));
     }
 
     public static int factorial(int n) {
