@@ -1,4 +1,4 @@
-package term2.lesson6.test;
+package term2.lesson6.test.strategyTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

@@ -1,4 +1,4 @@
-package term2.lesson6.test;
+package term2.lesson6.test.observerTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
