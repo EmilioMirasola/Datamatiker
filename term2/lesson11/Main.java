@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Main {
 
+	//github test
 	public static void main(String[] args) {
 		int[] ints = {5, 10, 5, 6, 4, 9, 8};
 		double[] prefixAve = prefixAverageBad(ints);
