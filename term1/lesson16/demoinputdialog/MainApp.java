@@ -14,7 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
-	// private InputDialog dialog;
+//	 private InputDialog dialog;
 
 	@Override
 	public void start(Stage stage) {
