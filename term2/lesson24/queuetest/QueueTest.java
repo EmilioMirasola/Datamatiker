@@ -12,6 +12,7 @@ import term2.lesson24.snacks.Snack;
 import term2.lesson24.snackssupply.SnackBar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -171,6 +172,7 @@ class QueueTest {
 		snacks[8] = new Limb();
 		snacks[9] = new Limb();
 		SnackBar snackBar = new SnackBar();
+		System.out.println(Arrays.toString(snacks));
 		ArrayList<Snack> sortedList = snackBar.sortSnacks(snacks);
 		System.out.println(sortedList.toString());
 	}
