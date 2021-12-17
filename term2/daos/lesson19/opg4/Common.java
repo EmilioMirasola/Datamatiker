@@ -18,13 +18,9 @@ public class Common {
 
 	public synchronized void makeOrder(int chefNumber) {
 		try {
-			if (next <= current) {
-				System.out.println("Kok " + chefNumber + " venter");
-				wait();
-			} else {
-				current++;
-				System.out.println("Kok " + chefNumber + " laver ordre: " + current);
-			}
+			wait();
+			current++;
+			System.out.println("Kok " + chefNumber + " laver ordre: " + current);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -188,13 +188,10 @@ public class BinarySearchTree<E extends Comparable<E>> {
 
 	private E removeMin(Node node) {
 		if (node.left.left == null) {
-			Node temp = node.left;
-			if (node.left.right != null) {
-				node.left = node.left.right;
-			} else {
-				node.left = null;
-			}
-			return temp.data;
+			Node nodeToRemove = node.left;
+			node.left = nodeToRemove.right;
+
+			return nodeToRemove.data;
 		} else {
 			return removeMin(node.left);
 		}
