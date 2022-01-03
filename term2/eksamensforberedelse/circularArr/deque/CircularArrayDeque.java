@@ -2,7 +2,7 @@ package term2.eksamensforberedelse.circularArr.deque;
 
 public class CircularArrayDeque implements DequeI {
 
-	private final Object[] deque;
+	private Object[] deque;
 	private int head = 0;
 	private int tail = 0;
 	private int size;
@@ -13,9 +13,8 @@ public class CircularArrayDeque implements DequeI {
 
 	@Override
 	public void addFirst(Object element) {
-		if (isFull()) {
-			throw new RuntimeException("Queue is full");
-		}
+		resizeIfNecessary();
+
 		if (head == 0) {
 			head = deque.length - 1;
 		} else {
@@ -30,11 +29,23 @@ public class CircularArrayDeque implements DequeI {
 		size++;
 	}
 
+	private void resizeIfNecessary() {
+		if (isFull()) {
+			Object[] newElements = new Object[2 * deque.length];
+			for (int i = 0; i < deque.length; i++) {
+				newElements[i] = deque[(head + i) % deque.length];
+			}
+			deque = newElements;
+			head = 0;
+			tail = size;
+		}
+	}
+
+
 	@Override
 	public void addLast(Object element) {
-		if (isFull()) {
-			throw new RuntimeException("Queue is full");
-		}
+		resizeIfNecessary();
+
 		if (tail == deque.length - 1) {
 			tail = 0;
 		} else {
@@ -66,6 +77,7 @@ public class CircularArrayDeque implements DequeI {
 
 	@Override
 	public Object removeLast() {
+
 		Object toBeRemoved = deque[tail];
 		deque[tail] = null;
 		if (tail == 0) {
@@ -108,11 +120,15 @@ public class CircularArrayDeque implements DequeI {
 		sb.append("[");
 		for (Object obj : deque) {
 			if (obj != null) {
-				sb.append(obj.toString());
+				sb.append(obj);
 				sb.append(", ");
 			}
 		}
 		sb.append("]");
 		return sb.toString();
+	}
+
+	public int length() {
+		return deque.length;
 	}
 }
