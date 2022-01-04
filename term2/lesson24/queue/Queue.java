@@ -12,7 +12,7 @@ public class Queue<T> {
 	 * Constructs an empty queue.
 	 */
 	public Queue(int size) {
-		elements = new Object[5];
+		elements = new Object[size];
 		currentSize = 0;
 		head = 0;
 		tail = 0;

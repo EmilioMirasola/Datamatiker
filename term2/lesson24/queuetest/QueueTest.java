@@ -10,6 +10,7 @@ import term2.lesson24.snacks.Limb;
 import term2.lesson24.snacks.Smartie;
 import term2.lesson24.snacks.Snack;
 import term2.lesson24.snackssupply.SnackBar;
+import term2.lesson24.snackssupply.SnackFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -194,5 +195,13 @@ class QueueTest {
 		SnackBar snackBar = new SnackBar();
 		ArrayList<Smartie> sortedList = snackBar.sortSnacks(snacks);
 		System.out.println(sortedList.toString());
+	}
+
+	@Test
+	@Order(6)
+	void test_snack_factory() {
+		SnackFactory factory = new SnackFactory();
+		ArrayList<Snack> snackBucket = factory.createSnackBucket(10);
+		System.out.println("Snack bucket: " + snackBucket);
 	}
 }

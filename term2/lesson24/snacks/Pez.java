@@ -34,4 +34,9 @@ public class Pez extends Snack {
 		Pez pez = (Pez) other;
 		return this.flavor.rank - ((Pez) other).getFlavor().rank;
 	}
+
+	@Override
+	public String toString() {
+		return this.flavor.toString();
+	}
 }
