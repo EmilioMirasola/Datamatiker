@@ -1,4 +1,4 @@
-package term2.eksamensforberedelse.circularArr.deque;
+package term2.eksamensforberedelse.circularArrOgQueue.deque;
 
 public interface DequeI
 {

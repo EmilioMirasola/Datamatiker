@@ -1,9 +1,9 @@
-package term2.eksamensforberedelse.circularArr.deque;
+package term2.eksamensforberedelse.circularArrOgQueue.deque;
 
 public class CircularArrayDeque implements DequeI {
 
 	private Object[] deque;
-	private int head = 0;
+	private int head = 1;
 	private int tail = 0;
 	private int size;
 

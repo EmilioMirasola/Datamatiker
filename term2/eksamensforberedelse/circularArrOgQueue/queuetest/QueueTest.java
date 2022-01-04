@@ -1,4 +1,4 @@
-package term2.eksamensforberedelse.circularArr.queuetest;
+package term2.eksamensforberedelse.circularArrOgQueue.queuetest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,11 +12,10 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import term2.eksamensforberedelse.circularArr.bryghus.Produkt;
-import term2.eksamensforberedelse.circularArr.bryghus.Salg;
-import term2.eksamensforberedelse.circularArr.queue.CircularArrayQueue;
-import term2.eksamensforberedelse.circularArr.queue.NodeQueue;
-import term2.eksamensforberedelse.circularArr.queue.QueueI;
+import term2.eksamensforberedelse.circularArrOgQueue.bryghus.Produkt;
+import term2.eksamensforberedelse.circularArrOgQueue.bryghus.Salg;
+import term2.eksamensforberedelse.circularArrOgQueue.queue.NodeQueue;
+import term2.eksamensforberedelse.circularArrOgQueue.queue.QueueI;
 
 @TestMethodOrder(OrderAnnotation.class)
 class QueueTest
@@ -39,7 +38,7 @@ class QueueTest
 
 //        this.queue = new CircularArrayQueue(5);
         this.queue = new NodeQueue();
-        
+
         Produkt kloster = new Produkt("Klosterbryg");
         Produkt sweet = new Produkt("Sweet Georgia Brown");
         Produkt extra = new Produkt("Extra Pilsner");
