@@ -1,4 +1,4 @@
-package term2.eksamensforberedelse.circularArrOgQueue.queuetest;
+package term2.eksamensforberedelse.circularArrOgQueueOgDeque.queuetest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,10 +12,10 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import term2.eksamensforberedelse.circularArrOgQueue.bryghus.Produkt;
-import term2.eksamensforberedelse.circularArrOgQueue.bryghus.Salg;
-import term2.eksamensforberedelse.circularArrOgQueue.queue.NodeQueue;
-import term2.eksamensforberedelse.circularArrOgQueue.queue.QueueI;
+import term2.eksamensforberedelse.circularArrOgQueueOgDeque.bryghus.Produkt;
+import term2.eksamensforberedelse.circularArrOgQueueOgDeque.bryghus.Salg;
+import term2.eksamensforberedelse.circularArrOgQueueOgDeque.queue.NodeQueue;
+import term2.eksamensforberedelse.circularArrOgQueueOgDeque.queue.QueueI;
 
 @TestMethodOrder(OrderAnnotation.class)
 class QueueTest

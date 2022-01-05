@@ -1,4 +1,4 @@
-package term2.eksamensforberedelse.circularArrOgQueue.queue;
+package term2.eksamensforberedelse.circularArrOgQueueOgDeque.queue;
 
 import java.util.NoSuchElementException;
 

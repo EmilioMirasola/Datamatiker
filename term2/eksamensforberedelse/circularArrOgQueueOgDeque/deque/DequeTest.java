@@ -1,4 +1,4 @@
-package term2.eksamensforberedelse.circularArrOgQueue.deque;
+package term2.eksamensforberedelse.circularArrOgQueueOgDeque.deque;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;

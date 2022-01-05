@@ -1,4 +1,4 @@
-package term2.eksamensforberedelse.circularArrOgQueue.bryghus;
+package term2.eksamensforberedelse.circularArrOgQueueOgDeque.bryghus;
 
 public class SalgsLinje
 {

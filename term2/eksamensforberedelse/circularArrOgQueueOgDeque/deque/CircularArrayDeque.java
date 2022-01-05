@@ -1,4 +1,4 @@
-package term2.eksamensforberedelse.circularArrOgQueue.deque;
+package term2.eksamensforberedelse.circularArrOgQueueOgDeque.deque;
 
 public class CircularArrayDeque implements DequeI {
 
