@@ -4,8 +4,8 @@ import java.util.NoSuchElementException;
 
 public class ArrayDropOutStack implements DropOutStackI {
 	private final Object[] stack;
-	private int top;
-	private int oldest;
+	private int head;
+	private int tail;
 	private int size;
 
 	public ArrayDropOutStack(int size) {
@@ -14,17 +14,19 @@ public class ArrayDropOutStack implements DropOutStackI {
 
 	@Override
 	public void push(Object element) {
-		if (isFull()) {
-			stack[oldest] = element;
-			oldest++;
-			if (oldest > stack.length - 1) {
-				oldest = 0;
-			}
+		if (isFull() || isEmpty()) {
+			stack[tail] = element;
+			tail = size % stack.length;
 		} else {
-			stack[top] = element;
-			top++;
+			stack[head] = element;
+		}
+
+		//only count size up if stack is not full
+		if (!isFull()) {
 			size++;
 		}
+
+		head = size % stack.length;
 	}
 
 	@Override
@@ -32,9 +34,11 @@ public class ArrayDropOutStack implements DropOutStackI {
 		if (isEmpty()) {
 			throw new NoSuchElementException();
 		}
-		Object prevTop = stack[top];
-		top--;
 		size--;
+		head = size % stack.length;
+
+		Object prevTop = stack[head];
+		stack[head] = null;
 		return prevTop;
 	}
 
@@ -43,7 +47,7 @@ public class ArrayDropOutStack implements DropOutStackI {
 		if (isEmpty()) {
 			throw new NoSuchElementException();
 		}
-		return stack[top];
+		return stack[head];
 	}
 
 	@Override
@@ -57,7 +61,7 @@ public class ArrayDropOutStack implements DropOutStackI {
 	}
 
 	private boolean isFull() {
-		return top == stack.length;
+		return head == stack.length;
 	}
 
 	@Override
