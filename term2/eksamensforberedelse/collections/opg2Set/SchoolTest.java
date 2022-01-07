@@ -2,6 +2,7 @@ package term2.eksamensforberedelse.collections.opg2Set;
 
 import org.junit.jupiter.api.*;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -19,11 +20,11 @@ class SchoolTest {
 	@BeforeEach
 	void setUp() {
 		this.school = new School("EAAA");
-		student1 = new Student(1, "1");
-		student2 = new Student(2, "2");
-		student3 = new Student(3, "3");
-		student4 = new Student(4, "4");
-		student5 = new Student(5, "5");
+		student1 = new Student(1, "A");
+		student2 = new Student(2, "Ø");
+		student3 = new Student(3, "Æ");
+		student4 = new Student(4, "B");
+		student5 = new Student(5, "Å");
 
 		school.addStudent(student1);
 		school.addStudent(student2);

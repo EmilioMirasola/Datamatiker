@@ -32,7 +32,7 @@ public class Student implements Comparable<Student> {
 
 	@Override
 	public String toString() {
-		return getName();
+		return getName() + " " + getStudentNumber();
 	}
 
 }
