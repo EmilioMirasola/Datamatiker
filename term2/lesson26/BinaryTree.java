@@ -150,9 +150,9 @@ public class BinaryTree<E> {
 		if (isLeaf(n)) {
 			return 0;
 		} else {
-			int leftHeight = n.left != null ? heightPreOrder(n.left) + 1 : 0;
+			int leftHeight = n.left != null ? heightInOrder(n.left) + 1 : 0;
 			System.out.println(n.data);
-			int rightHeight = n.right != null ? heightPreOrder(n.right) + 1 : 0;
+			int rightHeight = n.right != null ? heightInOrder(n.right) + 1 : 0;
 
 			return Math.max(leftHeight, rightHeight);
 		}
@@ -166,8 +166,8 @@ public class BinaryTree<E> {
 		if (isLeaf(n)) {
 			return 0;
 		} else {
-			int leftHeight = n.left != null ? heightPreOrder(n.left) + 1 : 0;
-			int rightHeight = n.right != null ? heightPreOrder(n.right) + 1 : 0;
+			int leftHeight = n.left != null ? heightPostOrder(n.left) + 1 : 0;
+			int rightHeight = n.right != null ? heightPostOrder(n.right) + 1 : 0;
 			System.out.println(n.data);
 
 			return Math.max(leftHeight, rightHeight);
